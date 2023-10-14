@@ -45,6 +45,7 @@
     pkgs.libreoffice-fresh
 
     # GAMES
+    pkgs.lutris
     pkgs.minetest
     pkgs.prismlauncher
     pollymc.packages.${system}.pollymc
