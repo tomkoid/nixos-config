@@ -42,7 +42,7 @@
       unifont # some international languages
       vazir-fonts
       jetbrains-mono
-      (nerdfonts.override { fonts = ["JetBrainsMono"]; })
+      nerdfonts
     ];
     fontconfig = {
       cache32Bit = true;
