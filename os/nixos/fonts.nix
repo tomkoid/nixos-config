@@ -20,7 +20,6 @@
       libertine
       mononoki
       mplus-outline-fonts.githubRelease
-      nerdfonts
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
