@@ -47,8 +47,8 @@
     fontconfig = {
       cache32Bit = true;
       defaultFonts = {
-        serif = [ "Cantarell" "Ubuntu" ];
-        sansSerif = [ "Cantarell" "Ubuntu" ];
+        serif = [ "Noto Serif" "Cantarell" "Ubuntu" ];
+        sansSerif = [ "Noto Sans" "Cantarell" "Ubuntu" ];
         monospace = [ "JetBrainsMono" ];
       };
     };
