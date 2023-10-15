@@ -1,6 +1,19 @@
 { config, pkgs, inputs, system, ... }:
 
 {
+  imports = [
+    ./programs/core/browsers.nix
+    ./programs/core/file-managers.nix
+    ./programs/core/graphical.nix
+
+    ./programs/cli/generic.nix
+
+    ./programs/games/games.nix
+
+    ./programs/misc/lang-servers.nix
+    ./programs/misc/other.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "tom";
@@ -22,57 +35,6 @@
   # nixpkgs.config.allowUnfree = true;
 
   home.packages = [
-    # BASIC UTILITIES
-    ## BROWSERS
-    pkgs.brave
-    pkgs.librewolf
-    pkgs.firefox
-    pkgs.ungoogled-chromium
-
-    ## FILE MANAGERS
-    pkgs.gnome.nautilus
-    pkgs.xfce.thunar
-
-    ## OTHER GUI PROGRAMS
-    pkgs.element-desktop
-    pkgs.discord
-    pkgs.keepassxc
-    pkgs.mpv
-    pkgs.thunderbird
-    pkgs.rofi-wayland
-    pkgs.gnome.gnome-tweaks
-    pkgs.gnome-text-editor
-    pkgs.libreoffice-fresh
-
-    # GAMES
-    pkgs.lutris
-    pkgs.minetest
-    pkgs.prismlauncher
-    inputs.pollymc.packages.${system}.pollymc
-
-    # MISC
-    ## CLI TOOLS
-    pkgs.htop
-    pkgs.gping
-    pkgs.zoxide
-    pkgs.ripgrep
-    pkgs.du-dust
-    pkgs.ani-cli
-    pkgs.neofetch
-    pkgs.pamixer
-    pkgs.alsa-utils
-
-    ## LANGUAGE SERVERS
-    pkgs.efm-langserver
-    pkgs.rust-analyzer
-    pkgs.lua-language-server
-    pkgs.gopls
-    pkgs.typescript
-    pkgs.nil
-    pkgs.rnix-lsp
-
-    pkgs.networkmanagerapplet
-
     # THEMES
     # The following is a Qt theme engine, which can be configured with kvantummanager
     pkgs.libsForQt5.qtstyleplugin-kvantum
@@ -90,9 +52,9 @@
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
+    (pkgs.writeShellScriptBin "my-hello" ''
+      echo "Hello, ${config.home.username}!"
+    '')
   ];
 
 
