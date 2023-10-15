@@ -19,6 +19,7 @@ in
     obs-studio
     gitFull
     wget
+    unzip
     kitty
     wofi
     swayidle

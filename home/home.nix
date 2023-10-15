@@ -5,6 +5,7 @@
     ./programs/core/browsers.nix
     ./programs/core/file-managers.nix
     ./programs/core/graphical.nix
+    ./programs/core/programming.nix
 
     ./programs/cli/generic.nix
     ./programs/cli/lf.nix

@@ -21,6 +21,7 @@
       ./programs/virt-manager.nix
       ./programs/steam.nix
       ./programs/fish.nix
+      ./programs/sudo.nix
 
       # Services
       ./services/pipewire.nix
