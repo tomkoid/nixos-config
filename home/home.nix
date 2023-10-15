@@ -1,4 +1,4 @@
-{ config, pkgs, pollymc, system, ... }:
+{ config, pkgs, inputs, system, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -48,13 +48,14 @@
     pkgs.lutris
     pkgs.minetest
     pkgs.prismlauncher
-    pollymc.packages.${system}.pollymc
+    inputs.pollymc.packages.${system}.pollymc
 
     # MISC
     ## CLI TOOLS
     pkgs.htop
     pkgs.gping
     pkgs.zoxide
+    pkgs.ripgrep
     pkgs.du-dust
     pkgs.ani-cli
     pkgs.neofetch

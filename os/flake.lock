@@ -19,10 +19,10 @@
     "root": {
       "inputs": {
         "nixpkgs": "nixpkgs",
-        "unstablepkgs": "unstablepkgs"
+        "unstable": "unstable"
       }
     },
-    "unstablepkgs": {
+    "unstable": {
       "locked": {
         "lastModified": 1697059129,
         "narHash": "sha256-9NJcFF9CEYPvHJ5ckE8kvINvI84SZZ87PvqMbH6pro0=",

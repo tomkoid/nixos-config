@@ -1,6 +1,12 @@
-{ pkgs, unstable, ... }:
+{ pkgs, inputs, system, ... }:
 
+let
+  unstable = import inputs.unstable {
+    inherit system;
+  };
+in
 {
+
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     unstable.neovim

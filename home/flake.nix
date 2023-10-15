@@ -10,13 +10,10 @@
     pollymc.url = "github:fn2006/PollyMC/develop";
   };
 
-  outputs = { self, nixpkgs, home-manager, pollymc, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
   let 
     inherit (self) outputs;
     system = "x86_64-linux";
-    # pollymc = import pollymc-src {
-    #   inherit system;
-    # };
   in
   {
     # Standalone home-manager configuration entrypoint
@@ -24,13 +21,13 @@
     homeConfigurations = {
       "tom@tomkoid" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
-          inherit system pollymc;
+          inherit system;
 
           config.allowUnfree = true;
         }; # Home-manager requires 'pkgs' instance
 
         extraSpecialArgs = {
-          inherit inputs outputs system pollymc;
+          inherit inputs outputs system;
         };
           
         # > Our main home-manager configuration file <
