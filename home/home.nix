@@ -7,6 +7,7 @@
     ./programs/core/graphical.nix
 
     ./programs/cli/generic.nix
+    ./programs/cli/lf.nix
 
     ./programs/games/games.nix
 

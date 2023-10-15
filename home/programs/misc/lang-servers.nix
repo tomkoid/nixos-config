@@ -1,5 +1,10 @@
 { home, pkgs, system, inputs, ... }:
 
+let
+  unstable = import inputs.unstable {
+    inherit system;
+  };
+in
 {
   home.packages = [
     pkgs.efm-langserver
@@ -9,5 +14,6 @@
     pkgs.typescript
     pkgs.nil
     pkgs.rnix-lsp
+    unstable.nixd
   ];
 }

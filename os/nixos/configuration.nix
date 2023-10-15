@@ -28,6 +28,8 @@
       ./services/bluetooth.nix
       ./services/flatpak.nix
       ./services/podman.nix
+      ./services/thermald.nix
+      ./services/auto-cpufreq.nix
     ];
 
   # Bootloader.
