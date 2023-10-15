@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./users.nix
       ./packages.nix
@@ -16,7 +17,7 @@
 
       # Extra
       ./extra/systemd.nix
-  
+
       # Programs
       ./programs/virt-manager.nix
       ./programs/steam.nix

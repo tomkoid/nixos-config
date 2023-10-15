@@ -13,4 +13,3 @@
     pkgs.libreoffice-fresh
   ];
 }
-    ## OTHER GUI PROGRAMS

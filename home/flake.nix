@@ -12,28 +12,28 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs:
-  let 
-    inherit (self) outputs;
-    system = "x86_64-linux";
-  in
-  {
-    # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
-    homeConfigurations = {
-      "tom@tomkoid" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          inherit system;
+    let
+      inherit (self) outputs;
+      system = "x86_64-linux";
+    in
+    {
+      # Standalone home-manager configuration entrypoint
+      # Available through 'home-manager --flake .#your-username@your-hostname'
+      homeConfigurations = {
+        "tom@tomkoid" = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            inherit system;
 
-          config.allowUnfree = true;
-        }; # Home-manager requires 'pkgs' instance
+            config.allowUnfree = true;
+          }; # Home-manager requires 'pkgs' instance
 
-        extraSpecialArgs = {
-          inherit inputs outputs system;
+          extraSpecialArgs = {
+            inherit inputs outputs system;
+          };
+
+          # > Our main home-manager configuration file <
+          modules = [ ./home.nix ];
         };
-          
-        # > Our main home-manager configuration file <
-        modules = [./home.nix];
       };
     };
-  };
 }

@@ -6,7 +6,6 @@ let
   };
 in
 {
-
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     unstable.neovim
@@ -15,7 +14,7 @@ in
     bat
     procs
     yt-dlp
-    
+
     obs-studio
     gitFull
     wget
@@ -42,7 +41,7 @@ in
     wlsunset
     pulseaudio
     libnotify
-    polkit_gnome 
+    polkit_gnome
     tealdeer
     distrobox
 

@@ -13,6 +13,7 @@ in
     pkgs.gopls
     pkgs.typescript
     unstable.nil
+    unstable.nixpkgs-fmt
     pkgs.rnix-lsp
     unstable.nixd
   ];

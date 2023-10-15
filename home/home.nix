@@ -91,8 +91,8 @@
 
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
-      autoconnect = ["qemu:///system"];
-      uris = ["qemu:///system"];
+      autoconnect = [ "qemu:///system" ];
+      uris = [ "qemu:///system" ];
     };
   };
 
@@ -132,7 +132,7 @@
     "application/pdf" = [ "brave-browser.desktop" ];
   };
 
-  fonts.fontconfig.enable = true; 
+  fonts.fontconfig.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
