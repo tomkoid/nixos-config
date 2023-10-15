@@ -12,6 +12,7 @@
       ./packages.nix
       ./fonts.nix
       ./polkit.nix
+      ./swap.nix
 
       # Extra
       ./extra/systemd.nix

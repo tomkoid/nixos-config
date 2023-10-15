@@ -12,7 +12,7 @@ in
     pkgs.lua-language-server
     pkgs.gopls
     pkgs.typescript
-    pkgs.nil
+    unstable.nil
     pkgs.rnix-lsp
     unstable.nixd
   ];
