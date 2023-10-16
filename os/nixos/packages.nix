@@ -28,7 +28,7 @@ in
     xss-lock
     waybar
     brightnessctl
-    starship
+    unstable.starship
     gparted
     parted
     usbutils

@@ -11,5 +11,7 @@
     pkgs.neofetch
     pkgs.pamixer
     pkgs.alsa-utils
+    pkgs.grim
+    pkgs.slurp
   ];
 }

@@ -11,7 +11,10 @@ in
     pkgs.rust-analyzer
     pkgs.lua-language-server
     pkgs.gopls
-    pkgs.typescript
+    pkgs.nodePackages_latest.typescript
+    pkgs.nodePackages_latest.typescript-language-server
+    pkgs.nodePackages_latest.eslint
+    pkgs.nodePackages_latest.prettier
     unstable.nil
     unstable.nixpkgs-fmt
     pkgs.rnix-lsp
