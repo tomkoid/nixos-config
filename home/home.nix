@@ -12,6 +12,8 @@
 
     ./programs/games/games.nix
 
+    ./programs/wayland/sway.nix
+
     ./programs/misc/lang-servers.nix
     ./programs/misc/other.nix
   ];
