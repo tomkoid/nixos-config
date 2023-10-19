@@ -8,5 +8,6 @@ in
 {
   home.packages = [
     unstable.bun
+    unstable.go
   ];
 }

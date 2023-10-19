@@ -1,8 +1,10 @@
-{ home, pkgs, ... }:
+{ home, pkgs, system, inputs, ... }:
 
 {
   home.packages = [
+    inputs.unstable.legacyPackages.${system}.neovide
     pkgs.element-desktop
+    pkgs.signal-desktop
     pkgs.discord
     pkgs.keepassxc
     pkgs.mpv
