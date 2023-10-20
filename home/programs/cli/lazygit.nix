@@ -6,6 +6,7 @@
     enable = true;
     package = pkgs.lazygit;
     settings = {
+      overrideGpg = true;
       git = {
         commit = {
           signOff = true;
