@@ -1,6 +1,10 @@
 { home, pkgs, system, inputs, ... }:
 
 {
+  imports = [
+    ./lazygit.nix
+  ];
+
   home.packages = [
     pkgs.htop
     pkgs.gping
@@ -13,5 +17,6 @@
     pkgs.alsa-utils
     pkgs.grim
     pkgs.slurp
+    inputs.mdhtml.defaultPackage.${system}
   ];
 }

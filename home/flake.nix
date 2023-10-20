@@ -9,6 +9,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     pollymc.url = "github:fn2006/PollyMC/develop";
+    mdhtml.url = "git+https://codeberg.org/Tomkoid/mdhtml";
+    thorium-browser.url = "git+https://codeberg.org/Tomkoid/thorium-browser-nix";
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs:

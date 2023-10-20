@@ -13,7 +13,10 @@ in
     pkgs.gopls
     pkgs.nodePackages_latest.typescript
     pkgs.nodePackages_latest.typescript-language-server
+    pkgs.nodePackages_latest.svelte-language-server
     pkgs.nodePackages_latest.eslint
+    pkgs.vscode-extensions.dbaeumer.vscode-eslint
+    unstable.vscode-langservers-extracted
     pkgs.nodePackages_latest.prettier
     unstable.nil
     unstable.nixpkgs-fmt

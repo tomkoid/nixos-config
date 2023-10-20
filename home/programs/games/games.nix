@@ -6,6 +6,7 @@
     pkgs.lutris
     pkgs.minetest
     pkgs.prismlauncher
+    pkgs.airshipper
     inputs.pollymc.packages.${system}.pollymc
   ];
 }
