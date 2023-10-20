@@ -8,7 +8,7 @@
     settings = {
       git = {
         commit = {
-          signOff = false;
+          signOff = true;
         };
         paging = {
           colorArg = "never";
