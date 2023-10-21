@@ -23,6 +23,7 @@
       ./programs/steam.nix
       ./programs/fish.nix
       ./programs/sudo.nix
+      ./programs/wine.nix
 
       # Services
       ./services/pipewire.nix
