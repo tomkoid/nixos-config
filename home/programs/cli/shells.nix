@@ -1,6 +1,14 @@
 { pkgs, ... }:
 
 {
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
+    enableNushellIntegration = true;
+  };
+
+  xdg.configFile."starship.toml".source = ../../config/starship/starship.toml;
+
   programs.zoxide = {
     enable = true;
     enableNushellIntegration = true;
