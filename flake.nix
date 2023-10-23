@@ -19,8 +19,22 @@
       system = "x86_64-linux";
     in
     {
-      # Standalone home-manager configuration entrypoint
-      # Available through 'home-manager --flake .#your-username@your-hostname'
+      nixosConfigurations = {
+        nixos = inputs.nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          specialArgs = {
+            inherit system;
+            inherit inputs;
+            inherit outputs;
+          };
+
+          modules = [
+            ./os/configuration.nix
+          ];
+        };
+      };
+
       homeConfigurations = {
         "tom@tomkoid" = home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs {
@@ -34,7 +48,7 @@
           };
 
           # > Our main home-manager configuration file <
-          modules = [ ./home.nix ];
+          modules = [ ./home/home.nix ];
         };
       };
     };
