@@ -8,6 +8,7 @@
     ./programs/core/programming.nix
 
     ./programs/cli/generic.nix
+    ./programs/cli/shells.nix
     ./programs/cli/lf.nix
 
     ./programs/games/games.nix
