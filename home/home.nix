@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, system, ... }:
+{ config, pkgs, inputs, system, username, ... }:
 
 {
   imports = [
@@ -21,7 +21,7 @@
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "tom";
+  home.username = username;
   home.homeDirectory = "/home/tom";
 
   # This value determines the Home Manager release that your configuration is

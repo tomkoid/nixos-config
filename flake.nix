@@ -17,6 +17,7 @@
     let
       inherit (self) outputs;
       system = "x86_64-linux";
+      username = "tom";
     in
     {
       nixosConfigurations = {
@@ -27,6 +28,7 @@
             inherit system;
             inherit inputs;
             inherit outputs;
+            inherit username;
           };
 
           modules = [
@@ -44,7 +46,7 @@
           }; # Home-manager requires 'pkgs' instance
 
           extraSpecialArgs = {
-            inherit inputs outputs system;
+            inherit inputs outputs system username;
           };
 
           # > Our main home-manager configuration file <

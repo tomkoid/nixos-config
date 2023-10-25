@@ -8,7 +8,6 @@
     pkgs.prismlauncher
     pkgs.airshipper
     pkgs.osu-lazer
-    pkgs.grapejuice
     inputs.pollymc.packages.${system}.pollymc
   ];
 }
