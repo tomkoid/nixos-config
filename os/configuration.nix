@@ -27,6 +27,7 @@
 
       # Services
       ./services/pipewire.nix
+      ./services/mpd.nix
       ./services/syncthing.nix
       ./services/printing.nix
       ./services/bluetooth.nix
