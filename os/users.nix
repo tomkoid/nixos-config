@@ -5,7 +5,7 @@
   users.users.tom = {
     isNormalUser = true;
     description = "tom";
-    extraGroups = [ "networkmanager" "wheel" "storage" "lock" "video" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "storage" "lock" "video" "libvirtd" "docker" ];
     # packages = with pkgs; [
     #   firefox
     #   thunderbird

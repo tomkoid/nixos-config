@@ -32,6 +32,7 @@
       ./services/bluetooth.nix
       ./services/flatpak.nix
       ./services/podman.nix
+      ./services/docker.nix
       ./services/thermald.nix
       ./services/auto-cpufreq.nix
     ];
