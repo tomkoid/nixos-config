@@ -22,6 +22,7 @@ in
     pkgs.alsa-utils
     pkgs.grim
     pkgs.slurp
-    inputs.mdhtml.defaultPackage.${system}
+    # inputs.mdhtml.defaultPackage.${system}
+    unstable.mdhtml
   ];
 }
