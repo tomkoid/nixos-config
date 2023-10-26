@@ -20,7 +20,8 @@ in
     gitFull
     wget
     unzip
-    kitty
+    unstable.kitty
+    tmux
     wofi
     swayidle
     swaylock
