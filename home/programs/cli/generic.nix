@@ -23,6 +23,7 @@ in
     pkgs.alsa-utils
     pkgs.grim
     pkgs.slurp
+    pkgs.swaybg
     # inputs.mdhtml.defaultPackage.${system}
     unstable.mdhtml
   ];
