@@ -18,6 +18,7 @@ in
     pkgs.ani-cli
     pkgs.neofetch
     pkgs.nitch
+    pkgs.fzf
     pkgs.pamixer
     pkgs.alsa-utils
     pkgs.grim

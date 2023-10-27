@@ -11,6 +11,7 @@
     pkgs.eww-wayland
     pkgs.thunderbird
     pkgs.rofi-wayland
+    pkgs.transmission-gtk
     pkgs.gnome.gnome-tweaks
     pkgs.gnome-text-editor
     pkgs.libreoffice-fresh
