@@ -1,5 +1,5 @@
 {
-  description = "My home-manager flake";
+  description = "My NixOS system flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";

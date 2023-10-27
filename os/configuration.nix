@@ -101,7 +101,6 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    package = inputs.unstable.legacyPackages.${system}.hyprland;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
