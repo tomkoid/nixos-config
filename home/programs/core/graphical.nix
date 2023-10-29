@@ -8,6 +8,7 @@
     pkgs.discord
     pkgs.keepassxc
     pkgs.mpv
+    pkgs.gimp
     pkgs.eww-wayland
     pkgs.thunderbird
     pkgs.rofi-wayland

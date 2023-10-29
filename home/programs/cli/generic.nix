@@ -25,6 +25,7 @@ in
     pkgs.slurp
     pkgs.swaybg
     # inputs.mdhtml.defaultPackage.${system}
+    unstable.tea
     unstable.mdhtml
   ];
 }
