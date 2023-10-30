@@ -15,7 +15,6 @@ in
     procs
     yt-dlp
 
-    android-tools
     vulkan-tools
     obs-studio
     gitFull

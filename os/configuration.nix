@@ -24,6 +24,7 @@
       ./programs/fish.nix
       ./programs/sudo.nix
       ./programs/wine.nix
+      ./programs/adb.nix
 
       # Services
       ./services/pipewire.nix
