@@ -35,6 +35,7 @@
       ./services/podman.nix
       ./services/docker.nix
       ./services/thermald.nix
+      ./services/fwupd.nix
       ./services/auto-cpufreq.nix
     ];
 
