@@ -13,6 +13,7 @@
     pkgs.thunderbird
     pkgs.rofi-wayland
     pkgs.transmission-gtk
+    pkgs.blender
     pkgs.gnome.gnome-tweaks
     pkgs.gnome-text-editor
     pkgs.libreoffice-fresh

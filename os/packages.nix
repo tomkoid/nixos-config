@@ -37,6 +37,7 @@ in
     usbutils
     exfat
     ntfs3g
+    glxinfo
     system-config-printer
     gnome.gnome-font-viewer
     lxappearance
