@@ -9,6 +9,7 @@
     pkgs.keepassxc
     pkgs.mpv
     pkgs.gimp
+    pkgs.inkscape
     pkgs.eww-wayland
     pkgs.thunderbird
     pkgs.rofi-wayland
