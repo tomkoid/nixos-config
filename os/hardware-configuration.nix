@@ -20,6 +20,7 @@
     enable = true;
     driSupport32Bit = true;
     driSupport = true;
+    extraPackages = [ pkgs.mesa.drivers ];
   };
 
   fileSystems."/" =

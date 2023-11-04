@@ -9,10 +9,13 @@
     pkgs.keepassxc
     pkgs.mpv
     pkgs.gimp
+    pkgs.inkscape
     pkgs.eww-wayland
     pkgs.thunderbird
     pkgs.rofi-wayland
+    pkgs.cambalache
     pkgs.transmission-gtk
+    pkgs.blender
     pkgs.gnome.gnome-tweaks
     pkgs.gnome-text-editor
     pkgs.libreoffice-fresh
