@@ -24,8 +24,7 @@ in
     pkgs.grim
     pkgs.slurp
     pkgs.swaybg
-    # inputs.mdhtml.defaultPackage.${system}
+    inputs.mdhtml.defaultPackage.${system}
     unstable.tea
-    unstable.mdhtml
   ];
 }
