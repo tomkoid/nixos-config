@@ -27,9 +27,7 @@ in
     swaylock
     wl-clipboard
     xss-lock
-    (unstable.waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    }))
+    waybar
     brightnessctl
     unstable.starship
     gparted
