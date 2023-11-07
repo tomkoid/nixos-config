@@ -92,6 +92,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     MOZ_ENABLE_WAYLAND = "1";
+    DEFAULT_BROWSER = "${pkgs.librewolf}/bin/librewolf";
   };
 
   dconf.settings = {
@@ -134,7 +135,12 @@
 
   xdg.mimeApps.defaultApplications = {
     "text/plain" = [ "org.gnome.TextEditor.desktop" ];
-    "application/pdf" = [ "brave-browser.desktop" ];
+    "text/html" = "librewolf.desktop";
+    "x-scheme-handler/http" = "librewolf.desktop";
+    "x-scheme-handler/https" = "librewolf.desktop";
+    "x-scheme-handler/about" = "librewolf.desktop";
+    "x-scheme-handler/unknown" = "librewolf.desktop";
+    "application/pdf" = [ "librewolf.desktop" ];
   };
 
   fonts.fontconfig.enable = true;
