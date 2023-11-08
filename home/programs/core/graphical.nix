@@ -14,6 +14,7 @@
     pkgs.thunderbird
     pkgs.rofi-wayland
     pkgs.cambalache
+    pkgs.gnome.eog
     pkgs.transmission-gtk
     pkgs.blender
     pkgs.gnome.gnome-tweaks
