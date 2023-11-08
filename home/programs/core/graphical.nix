@@ -15,6 +15,7 @@
     pkgs.rofi-wayland
     pkgs.cambalache
     pkgs.gnome.eog
+    pkgs.feh
     pkgs.transmission-gtk
     pkgs.blender
     pkgs.gnome.gnome-tweaks
