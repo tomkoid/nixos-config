@@ -55,6 +55,8 @@ in
     gnumake
     pkg-config
     fontconfig
+    qt6.full
+    qt6.qtbase
     gtk4
     gtk4.dev
     gtk3
