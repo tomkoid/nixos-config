@@ -33,6 +33,7 @@
       ./services/printing.nix
       ./services/bluetooth.nix
       ./services/flatpak.nix
+      ./services/gvfs.nix
       ./services/podman.nix
       ./services/docker.nix
       ./services/thermald.nix
