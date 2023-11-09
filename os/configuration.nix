@@ -25,6 +25,7 @@
       ./programs/sudo.nix
       ./programs/wine.nix
       ./programs/adb.nix
+      ./programs/noisetorch.nix
 
       # Services
       ./services/pipewire.nix
