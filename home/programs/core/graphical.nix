@@ -15,7 +15,12 @@
     pkgs.rofi-wayland
     pkgs.cambalache
     pkgs.gnome.eog
+    pkgs.gnome.simple-scan
     pkgs.feh
+    pkgs.godot_4
+    pkgs.android-studio
+    # pkgs.ventoy-full
+    pkgs.ventoy
     pkgs.transmission-gtk
     pkgs.blender
     pkgs.gnome.gnome-tweaks

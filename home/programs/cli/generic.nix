@@ -24,6 +24,8 @@ in
     pkgs.grim
     pkgs.slurp
     pkgs.swaybg
+    pkgs.apksigner
+    pkgs.openjdk
     inputs.mdhtml.defaultPackage.${system}
     unstable.tea
   ];

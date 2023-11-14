@@ -31,6 +31,7 @@
       ./services/pipewire.nix
       ./services/mpd.nix
       ./services/syncthing.nix
+      ./services/i2pd.nix
       ./services/printing.nix
       ./services/bluetooth.nix
       ./services/flatpak.nix
@@ -107,6 +108,9 @@
     xwayland.enable = true;
   };
 
+
+  # services.xserver.desktopManager.gnome.enable = true;
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -124,7 +128,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 3000 3009 6969 5173 5174 ];
