@@ -8,7 +8,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    pollymc.url = "github:fn2006/PollyMC/develop";
+    pollymc.url = "github:Tomkoid/PollyMC/develop";
     mdhtml.url = "git+https://codeberg.org/Tomkoid/mdhtml";
     thorium-browser.url = "git+https://codeberg.org/Tomkoid/thorium-browser-nix";
   };
