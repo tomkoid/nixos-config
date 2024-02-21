@@ -1,57 +1,35 @@
 {
-  description = "My NixOS system flake";
+  description = "Nixos config flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    pollymc.url = "github:Tomkoid/PollyMC/develop";
-    mdhtml.url = "git+https://codeberg.org/Tomkoid/mdhtml";
-    thorium-browser.url = "git+https://codeberg.org/Tomkoid/thorium-browser-nix";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, ... }@inputs:
     let
-      inherit (self) outputs;
       system = "x86_64-linux";
-      username = "tom";
+      mainUser = "tom";
+      pkgs = import nixpkgs {
+        config = {
+          inherit system;
+          allowUnfree = true;
+        };
+      };
     in
     {
-      nixosConfigurations = {
-        nixos = inputs.nixpkgs.lib.nixosSystem {
-          inherit system;
-
-          specialArgs = {
-            inherit system;
-            inherit inputs;
-            inherit outputs;
-            inherit username;
-          };
-
-          modules = [
-            ./os/configuration.nix
+    
+      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; inherit mainUser; };
+          modules = [ 
+            ./hosts/default/configuration.nix
+            inputs.home-manager.nixosModules.default
           ];
         };
-      };
 
-      homeConfigurations = {
-        "tom@tomkoid" = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs {
-            inherit system;
-
-            config.allowUnfree = true;
-          }; # Home-manager requires 'pkgs' instance
-
-          extraSpecialArgs = {
-            inherit inputs outputs system username;
-          };
-
-          # > Our main home-manager configuration file <
-          modules = [ ./home/home.nix ];
-        };
-      };
     };
 }
