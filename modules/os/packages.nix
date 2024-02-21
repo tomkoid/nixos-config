@@ -10,6 +10,7 @@
     grim slurp swappy hyprshot
     swaylock xss-lock
     vlc mpv
+    hping
     gnumake
     nodejs_21 go rustup
     sqlite

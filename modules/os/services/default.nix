@@ -14,6 +14,7 @@
     ./printing.nix
     ./sound.nix
     ./syncthing.nix
+    ./udev.nix
     ./thermald.nix
   ];
 
@@ -22,6 +23,7 @@
 
   services.gvfs.enable = true;
   services.udisks2.enable = true;
+  services.udisks2.mountOnMedia = true;
   services.tor.enable = true;
   services.openssh.enable = true;
 

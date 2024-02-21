@@ -6,5 +6,6 @@
     ./cli
     ./tools
     ./packages.nix
+    ./services.nix
   ];
 }
