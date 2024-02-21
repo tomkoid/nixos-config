@@ -9,8 +9,8 @@
     efm-langserver
     gamemode
     mpd mpc-cli ncmpcpp
-    wget neofetch zoxide eza pamixer yt-dlp ripgrep
-    fish 
+    wget neofetch zoxide eza pamixer yt-dlp ripgrep gping
+    fish tmux
     xfce.thunar gnome.nautilus
     wl-clipboard swww swaybg wofi waybar fzf
     gimp kdenlive inkscape eartag
