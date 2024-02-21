@@ -15,5 +15,9 @@
       };
       signing.key = "D4403E79602EE85B";
     };
+
+    home.packages = with pkgs; [
+      lazygit
+    ];
   };
 }
