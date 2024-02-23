@@ -7,12 +7,13 @@
     element-desktop
     discord
     efm-langserver
-    gamemode
+    lutris gamemode mangohud
+    xautoclick
     mpd mpc-cli ncmpcpp
     wget zoxide eza pamixer yt-dlp ripgrep bat gping
     fish
     xfce.thunar gnome.nautilus
-    wl-clipboard swww swaybg wofi waybar fzf
+    wl-clipboard wlsunset wluma swww swaybg wofi waybar fzf dust
     gimp kdenlive inkscape eartag
     gnome.gnome-system-monitor
     transmission-gtk
@@ -27,6 +28,7 @@
     minetest
     prismlauncher
     airshipper
+    openarena
     osu-lazer
 
     #proton stuff

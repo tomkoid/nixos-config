@@ -67,6 +67,8 @@
     variant = "";
   };
 
+  services.dbus.enable = true;
+
   programs.dconf.enable = true;
 
   security.rtkit.enable = true;
@@ -74,8 +76,9 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${mainUser} = {
     isNormalUser = true;
+    initialPassword = "nixos"; # nixos
     description = mainUser;
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [ "wheel" "disk" "docker" "audio" "video" "input" "systemd-journal" "networkmanager" "network" "davfs2" "networkmanager" "libvirtd" ];
     packages = with pkgs; [
       firefox
     ];

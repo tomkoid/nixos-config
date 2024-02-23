@@ -6,13 +6,19 @@
     neovim
     kitty
     htop
-    libnotify dunst
+    libnotify
+    polkit_gnome
+    gparted
     grim slurp swappy hyprshot
-    swaylock xss-lock
+    swayidle swaylock xss-lock
+    unrar
+    brightnessctl
     vlc mpv
     hping
     gnumake
     nodejs_21 go rustup
+    python3Full
+    python311Packages.setuptools
     sqlite
     wineWowPackages.stable 
   ];
