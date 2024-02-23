@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     keepassxc
     obs-studio
-    element-desktop
+    element-desktop signal-desktop whatsapp-for-linux
     discord
     efm-langserver
     lutris gamemode mangohud
@@ -26,6 +26,7 @@
 
     # GAMES
     lutris
+    heroic
     minetest
     prismlauncher
     airshipper
