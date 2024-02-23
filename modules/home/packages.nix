@@ -16,6 +16,7 @@
     wl-clipboard wlsunset wluma swww swaybg wofi waybar fzf dust
     gimp kdenlive inkscape eartag
     gnome.gnome-system-monitor
+    pavucontrol
     transmission-gtk
 
     # BROWSERS
