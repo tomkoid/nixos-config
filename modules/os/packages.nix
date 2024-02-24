@@ -12,7 +12,7 @@
     gparted
     grim slurp swappy hyprshot
     swayidle swaylock xss-lock
-    unrar
+    unzip unrar
     brightnessctl
     vlc mpv
     hping
