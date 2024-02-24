@@ -57,7 +57,6 @@
     # GAMES
     lutris
     heroic
-    itch
     minetest
     prismlauncher
     airshipper
