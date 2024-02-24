@@ -13,7 +13,11 @@
       delta = {
         enable = true;
       };
-      signing.key = "D4403E79602EE85B";
+      signing = {
+        gpgPath = "${pkgs.gnupg}/bin/gpg";
+        key = "D4403E79602EE85B";
+        signByDefault = true;
+      };
       extraConfig = {
         crendetial.helper = "store";
       };
