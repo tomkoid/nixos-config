@@ -9,5 +9,21 @@
     # here, NOT in environment.systemPackages
     stylua
     lua-language-server
+    fuse
+    libz
+    zlib
+    gtk3
+    gtk4.dev
+    gtk4
+    gtk2-x11
+    gdk-pixbuf
+    pango
+    glib
+    glibc
+    openssl
+    xorg.xorgserver
+    xorg.libX11
+    xorg.libXi
+    xorg.libXtst
   ];
 }

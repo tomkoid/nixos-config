@@ -8,11 +8,15 @@
     signal-desktop
     whatsapp-for-linux
     discord
+    (pkgs.callPackage ../../packages/webcord.nix { }) # webcord
     efm-langserver
     lutris
     gamemode
     mangohud
     xautoclick
+    (pkgs.callPackage
+      ../../packages/xclicker.nix
+      { }) # xclicker
     mpd
     mpc-cli
     ncmpcpp
