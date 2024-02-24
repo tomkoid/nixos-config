@@ -14,6 +14,9 @@
         enable = true;
       };
       signing.key = "D4403E79602EE85B";
+      extraConfig = {
+        crendetial.helper = "store";
+      };
     };
 
     home.packages = with pkgs; [
