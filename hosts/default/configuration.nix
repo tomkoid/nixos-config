@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, mainUser, ... }:
+{ config, pkgs, inputs, mainUser, flakeDir, ... }:
 
 {
   imports =
@@ -14,7 +14,7 @@
     ];
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; inherit mainUser; };
+    extraSpecialArgs = { inherit inputs; inherit mainUser; inherit flakeDir; };
     users = {
       ${mainUser} = import ./home/home.nix;
     };

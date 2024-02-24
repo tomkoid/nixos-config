@@ -14,6 +14,7 @@
     let
       system = "x86_64-linux";
       mainUser = "tom";
+      flakeDir = "/home/${mainUser}/system";
       pkgs = import nixpkgs {
         config = {
           inherit system;
@@ -24,7 +25,7 @@
     {
 
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; inherit mainUser; };
+        specialArgs = { inherit inputs; inherit mainUser; inherit flakeDir; };
         modules = [
           ./hosts/default/configuration.nix
           inputs.home-manager.nixosModules.default
