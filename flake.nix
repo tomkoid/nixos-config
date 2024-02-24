@@ -22,14 +22,14 @@
       };
     in
     {
-    
+
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; inherit mainUser; };
-          modules = [ 
-            ./hosts/default/configuration.nix
-            inputs.home-manager.nixosModules.default
-          ];
-        };
+        specialArgs = { inherit inputs; inherit mainUser; };
+        modules = [
+          ./hosts/default/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
 
     };
 }

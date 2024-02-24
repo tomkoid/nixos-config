@@ -2,7 +2,7 @@
 
 {
   options = {
-    myConfig.starship.enable = lib.mkEnableOption "enable starship"; 
+    myConfig.starship.enable = lib.mkEnableOption "enable starship";
   };
 
   config = lib.mkIf config.myConfig.starship.enable {

@@ -6,14 +6,15 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/os
       inputs.home-manager.nixosModules.default
     ];
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs; inherit mainUser; };
+    extraSpecialArgs = { inherit inputs; inherit mainUser; };
     users = {
       ${mainUser} = import ./home/home.nix;
     };

@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
@@ -23,18 +24,20 @@
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/3cdd9995-2327-4288-a7d9-07bf90ec7991";
+    {
+      device = "/dev/disk/by-uuid/3cdd9995-2327-4288-a7d9-07bf90ec7991";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/32EE-FC5B";
+    {
+      device = "/dev/disk/by-uuid/32EE-FC5B";
       fsType = "vfat";
     };
 
   swapDevices = [{
     device = "/var/lib/swapfile";
-    size = 16*1024;
+    size = 16 * 1024;
   }];
 
   # enable zram

@@ -10,17 +10,26 @@
     polkit_gnome
     gnome.gnome-keyring
     gparted
-    grim slurp swappy hyprshot
-    swayidle swaylock xss-lock
-    unzip unrar
+    grim
+    slurp
+    swappy
+    hyprshot
+    swayidle
+    swaylock
+    xss-lock
+    unzip
+    unrar
     brightnessctl
-    vlc mpv
+    vlc
+    mpv
     hping
     gnumake
-    nodejs_21 go rustup
+    nodejs_21
+    go
+    rustup
     python3Full
     python311Packages.setuptools
     sqlite
-    wineWowPackages.stable 
+    wineWowPackages.stable
   ];
 }

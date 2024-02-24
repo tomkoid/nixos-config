@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  tokyo-night = pkgs.libsForQt5.callPackage ../../../packages/sddm-tokyo-night.nix {};
+  tokyo-night = pkgs.libsForQt5.callPackage ../../../packages/sddm-tokyo-night.nix { };
 in
 {
   services.xserver = {

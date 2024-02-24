@@ -1,4 +1,6 @@
-{ lib, qtbase, qtsvg
+{ lib
+, qtbase
+, qtsvg
 , qtgraphicaleffects
 , qtquickcontrols2
 , wrapQtAppsHook
@@ -31,4 +33,3 @@ stdenvNoCC.mkDerivation rec {
     cp -aR $src $out/share/sddm/themes/tokyo-night-sddm
   '';
 }
-

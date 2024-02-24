@@ -4,17 +4,43 @@
   home.packages = with pkgs; [
     keepassxc
     obs-studio
-    element-desktop signal-desktop whatsapp-for-linux
+    element-desktop
+    signal-desktop
+    whatsapp-for-linux
     discord
     efm-langserver
-    lutris gamemode mangohud
+    lutris
+    gamemode
+    mangohud
     xautoclick
-    mpd mpc-cli ncmpcpp
-    wget zoxide eza pamixer yt-dlp ripgrep bat gping fd fzf dust
+    mpd
+    mpc-cli
+    ncmpcpp
+    wget
+    zoxide
+    eza
+    pamixer
+    yt-dlp
+    ripgrep
+    bat
+    gping
+    fd
+    fzf
+    dust
     fish
-    xfce.thunar gnome.nautilus
-    wl-clipboard wlsunset wluma swww swaybg wofi waybar
-    gimp kdenlive inkscape eartag
+    xfce.thunar
+    gnome.nautilus
+    wl-clipboard
+    wlsunset
+    wluma
+    swww
+    swaybg
+    wofi
+    waybar
+    gimp
+    kdenlive
+    inkscape
+    eartag
     gnome.gnome-system-monitor
     pavucontrol
     transmission-gtk

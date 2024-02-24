@@ -21,7 +21,7 @@
         corner_radius = 7;
         follow = "keyboard";
       };
-      
+
       urgency_low = {
         background = "#181926";
         foreground = "#8aadf4";

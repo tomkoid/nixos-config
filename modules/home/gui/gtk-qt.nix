@@ -2,7 +2,7 @@
 
 {
   options = {
-    myConfig.gtk-qt.enable = lib.mkEnableOption "enable gtk and qt theming"; 
+    myConfig.gtk-qt.enable = lib.mkEnableOption "enable gtk and qt theming";
   };
 
   config = lib.mkIf config.myConfig.gtk-qt.enable {
@@ -23,7 +23,7 @@
         package = pkgs.papirus-icon-theme;
         name = "Papirus-Dark";
       };
-    };  
+    };
 
     qt = {
       enable = true;
