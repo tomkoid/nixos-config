@@ -10,10 +10,10 @@
     lutris gamemode mangohud
     xautoclick
     mpd mpc-cli ncmpcpp
-    wget zoxide eza pamixer yt-dlp ripgrep bat gping
+    wget zoxide eza pamixer yt-dlp ripgrep bat gping fd fzf dust
     fish
     xfce.thunar gnome.nautilus
-    wl-clipboard wlsunset wluma swww swaybg wofi waybar fzf dust
+    wl-clipboard wlsunset wluma swww swaybg wofi waybar
     gimp kdenlive inkscape eartag
     gnome.gnome-system-monitor
     pavucontrol
