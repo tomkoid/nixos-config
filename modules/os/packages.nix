@@ -8,6 +8,7 @@
     htop
     libnotify
     polkit_gnome
+    gnome.gnome-keyring
     gparted
     grim slurp swappy hyprshot
     swayidle swaylock xss-lock
