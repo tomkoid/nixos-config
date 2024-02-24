@@ -41,6 +41,7 @@
     swaybg
     wofi
     waybar
+    helix
     gimp
     kdenlive
     inkscape
