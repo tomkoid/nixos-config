@@ -26,6 +26,7 @@
   services.udisks2.mountOnMedia = true;
   services.tor.enable = true;
   services.openssh.enable = true;
+  programs.ssh.askPassword = "";
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
