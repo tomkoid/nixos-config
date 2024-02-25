@@ -16,6 +16,12 @@
       drivers = [ pkgs.hplipWithPlugin ];
     };
 
+    services.avahi = {
+      enable = true;
+      nssmdns = true;
+      openFirewall = true;
+    };
+
     environment.systemPackages = [
       pkgs.system-config-printer
     ];
