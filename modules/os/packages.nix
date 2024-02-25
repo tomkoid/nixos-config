@@ -29,6 +29,7 @@
     rustup
     python3Full
     python311Packages.setuptools
+    mold
     sqlite
     wineWowPackages.stable
   ];
