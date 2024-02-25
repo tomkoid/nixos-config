@@ -45,6 +45,7 @@
     gimp
     kdenlive
     inkscape
+    libreoffice
     eartag
     gnome.gnome-system-monitor
     pavucontrol
