@@ -44,6 +44,7 @@
     helix
     gimp
     kdenlive
+    tenacity
     inkscape
     libreoffice
     eartag
