@@ -16,6 +16,7 @@
     hyprshot
     swayidle
     swaylock
+    sway-audio-idle-inhibit
     xss-lock
     unzip
     unrar
