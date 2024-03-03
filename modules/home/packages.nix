@@ -51,6 +51,7 @@
     gnome.gnome-system-monitor
     pavucontrol
     transmission-gtk
+    distrobox
 
     # BROWSERS
     brave
