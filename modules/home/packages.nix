@@ -28,6 +28,7 @@
     ripgrep
     bat
     gping
+    tealdeer
     fd
     fzf
     dust
