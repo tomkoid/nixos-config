@@ -47,6 +47,7 @@
     tenacity
     inkscape
     libreoffice
+    android-studio
     eartag
     gnome.gnome-system-monitor
     pavucontrol
