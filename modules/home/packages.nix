@@ -48,6 +48,7 @@
     tenacity
     inkscape
     libreoffice
+    thunderbird
     android-studio
     eartag
     gnome.gnome-system-monitor
