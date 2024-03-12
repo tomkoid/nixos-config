@@ -26,6 +26,7 @@
     pamixer
     yt-dlp
     ripgrep
+    jq
     bat
     gping
     tealdeer
