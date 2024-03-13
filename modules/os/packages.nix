@@ -23,6 +23,7 @@
     brightnessctl
     vlc
     mpv
+    playerctl
     hping
     gnumake
     nodejs_21
