@@ -5,32 +5,23 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" "v4l2loopback" ];
-  boot.extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.extraModulePackages = [
+    config.boot.kernelPackages.v4l2loopback
+  ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/e2aa3c7e-45f0-40fe-ab72-f00fa8f9b77d";
-      fsType = "ext4";
-    };
-
-  boot.initrd.luks.devices."luks-68d7bcb0-3b46-43ce-9080-06180317daea".device = "/dev/disk/by-uuid/68d7bcb0-3b46-43ce-9080-06180317daea";
-
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/04C4-6CB0";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
-    };
-
-  hardware.graphics = {
+  hardware.opengl = {
     enable = true;
-    enable32Bit = true;
+    driSupport32Bit = true;
+    driSupport = true;
     extraPackages = with pkgs; [
-      mesa.drivers
+      pkgs.mesa.drivers
       intel-media-driver # LIBVA_DRIVER_NAME=iHD
       intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
       vaapiVdpau
@@ -41,6 +32,18 @@
   environment.systemPackages = [
     pkgs.intel-gpu-tools
   ];
+
+  fileSystems."/" =
+    {
+      device = "/dev/disk/by-uuid/3cdd9995-2327-4288-a7d9-07bf90ec7991";
+      fsType = "ext4";
+    };
+
+  fileSystems."/boot" =
+    {
+      device = "/dev/disk/by-uuid/32EE-FC5B";
+      fsType = "vfat";
+    };
 
   swapDevices = [{
     device = "/var/lib/swapfile";
@@ -60,8 +63,6 @@
   # networking.interfaces.enp3s0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
-
-  services.power-profiles-daemon.enable = false;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

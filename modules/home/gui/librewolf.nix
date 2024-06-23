@@ -2,7 +2,7 @@
 
 {
   options = {
-    myConfig.librewolf.enable = lib.mkEnableOption "enable gtk theming";
+    myConfig.librewolf.enable = lib.mkEnableOption "enable librewolf";
   };
 
   config = lib.mkIf config.myConfig.librewolf.enable {

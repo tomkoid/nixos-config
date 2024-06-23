@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ inputs, lib, config, pkgs, ... }:
 
 {
   options = {
@@ -9,11 +9,8 @@
     gtk = {
       enable = true;
       theme = {
-        name = "Catppuccin-Mocha-Standard-Blue-Dark";
-        package = pkgs.catppuccin-gtk.override {
-          accents = [ "blue" ];
-          variant = "mocha";
-        };
+        name = "Colloid-Dark";
+        package = pkgs.colloid-gtk-theme;
       };
       cursorTheme = {
         package = pkgs.gnome.adwaita-icon-theme;
@@ -27,7 +24,7 @@
 
     qt = {
       enable = true;
-      platformTheme = "gnome";
+      platformTheme.name = "adwaita";
       style = {
         name = "adwaita-dark";
         package = pkgs.adwaita-qt;

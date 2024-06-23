@@ -8,6 +8,7 @@
   config = lib.mkIf config.myConfig.git.enable {
     programs.git = {
       enable = true;
+      lfs.enable = true;
       userName = "Tomkoid";
       userEmail = "tomaszierl@outlook.com";
       delta = {
@@ -22,6 +23,10 @@
         crendetial.helper = "store";
       };
     };
+    
+    # home.packages = [
+    #   pkgs.git-lfs
+    # ];
 
     # lazygit config
     programs.lazygit = {

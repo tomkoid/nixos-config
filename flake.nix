@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, home-manager, nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
       mainUser = "tom";
@@ -21,16 +21,24 @@
           allowUnfree = true;
         };
       };
+      # overlay-unstable = final: prev: {
+      #   unstable = nixpkgs-unstable.legacyPackages.${prev.system};
+      #   # use this variant if unfree packages are needed:
+      #   # unstable = import nixpkgs-unstable {
+      #   #   inherit system;
+      #   #   config.allowUnfree = true;
+      #   # };
+      #
+      # };
     in
     {
-
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; inherit mainUser; inherit flakeDir; };
         modules = [
+          # ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
           ./hosts/default/configuration.nix
           inputs.home-manager.nixosModules.default
         ];
       };
-
     };
 }

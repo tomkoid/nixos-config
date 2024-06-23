@@ -14,9 +14,16 @@
     ];
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; inherit mainUser; inherit flakeDir; };
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    backupFileExtension = "backup";
+    extraSpecialArgs = { inherit inputs; inherit pkgs; inherit mainUser; inherit flakeDir; };
     users = {
-      ${mainUser} = import ./home/home.nix;
+      ${mainUser} = {
+        imports = [
+          ./home/home.nix
+        ];
+      };
     };
   };
 
@@ -60,7 +67,10 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+    # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
   };
+
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -74,6 +84,8 @@
 
   security.rtkit.enable = true;
 
+  # syncthing.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${mainUser} = {
     isNormalUser = true;
@@ -86,7 +98,12 @@
   };
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "electron-28.3.3"
+    ];
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

@@ -1,4 +1,4 @@
-{ pkgs, mainUser, ... }:
+{ pkgs, mainUser, inputs, ... }:
 
 {
   imports = [
@@ -33,10 +33,11 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
+
   myConfig = {
+    gtk-qt.enable = true;
     git.enable = true;
     dconf.enable = true;
-    gtk-qt.enable = true;
     starship.enable = true;
     librewolf.enable = true;
   };
@@ -58,6 +59,10 @@
   #
 
   nixpkgs.config.allowUnfree = true;
+
+  wayland.windowManager.hyprland = {
+    systemd.enable = true;
+  };
 
   home.sessionVariables = {
     EDITOR = "nvim";

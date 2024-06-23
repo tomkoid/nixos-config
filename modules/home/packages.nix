@@ -42,6 +42,7 @@
     swww
     swaybg
     wofi
+    fuzzel
     waybar
     helix
     gimp
@@ -58,18 +59,15 @@
     distrobox
 
     # BROWSERS
+    librewolf
     brave
     firefox
     ungoogled-chromium
 
     # GAMES
     lutris
-    heroic
     minetest
     prismlauncher
-    airshipper
-    openarena
-    osu-lazer
 
     #proton stuff
     protonup-qt

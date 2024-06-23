@@ -5,6 +5,8 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     neovim
     kitty
+    wezterm
+    zsh
     htop
     libnotify
     polkit_gnome
@@ -14,6 +16,8 @@
     slurp
     swappy
     hyprshot
+    hyprlock
+    hyprpicker
     swayidle
     swaylock
     sway-audio-idle-inhibit
@@ -26,12 +30,13 @@
     playerctl
     hping
     gnumake
-    nodejs_21
+    nodejs
     go
     rustup
     python3Full
     python311Packages.setuptools
     mold
+    gcc clang
     sqlite
     wineWowPackages.stable
   ];
