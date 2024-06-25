@@ -109,7 +109,7 @@
   # $ nix search wget
 
   myConfig = {
-    steam.enable = true;
+    gaming.enable = true;
     polkit.enable = true;
     nh.enable = true;
 

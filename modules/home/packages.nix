@@ -11,12 +11,9 @@
     (pkgs.callPackage ../../packages/webcord.nix { }) # webcord
     efm-langserver
     lutris
-    gamemode
-    mangohud
     xautoclick
-    (pkgs.callPackage
-      ../../packages/xclicker.nix
-      { }) # xclicker
+    (pkgs.callPackage ../../packages/xclicker.nix { }) # xclicker
+    (pkgs.callPackage ../../packages/supershush.nix { }) # supershush
     mpd
     mpc-cli
     ncmpcpp

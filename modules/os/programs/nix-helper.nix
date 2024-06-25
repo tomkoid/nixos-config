@@ -1,7 +1,7 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, inputs, flakeDir, ... }:
 
 let
-  flakePath = inputs.self.outPath;
+  flakePath = flakeDir;
 in
 {
   options = {
