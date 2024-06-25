@@ -2,14 +2,14 @@
 
 {
   options = {
-    printing.enable = lib.mkEnableOption "enable printing";
-    printing.HPSupport = lib.mkOption {
+    myConfig.printing.enable = lib.mkEnableOption "enable printing";
+    myConfig.printing.HPSupport = lib.mkOption {
       default = false;
       description = "enables printing with hplip";
     };
   };
 
-  config = lib.mkIf config.printing.enable {
+  config = lib.mkIf config.myConfig.printing.enable {
     # Enable CUPS to print documents.
     services.printing = {
       enable = true;

@@ -109,13 +109,16 @@
   # $ nix search wget
 
   myConfig = {
+    steam.enable = true;
+    polkit.enable = true;
     nh.enable = true;
+
+    printing = {
+      enable = true;
+      HPSupport = true;
+    };
   };
 
-  printing = {
-    enable = true;
-    HPSupport = true;
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
