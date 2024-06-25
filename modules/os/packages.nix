@@ -18,6 +18,7 @@
     hyprshot
     hyprlock
     hyprpicker
+    swappy
     swayidle
     swaylock
     sway-audio-idle-inhibit

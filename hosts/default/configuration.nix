@@ -108,6 +108,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 
+  myConfig = {
+    nh.enable = true;
+  };
+
   printing = {
     enable = true;
     HPSupport = true;

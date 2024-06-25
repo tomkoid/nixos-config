@@ -4,6 +4,7 @@
   imports = [
     ./sudo.nix
     ./adb.nix
+    ./nix-helper.nix
     ./noisetorch.nix
     ./swaylock.nix
     ./virt-manager.nix

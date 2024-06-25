@@ -32,7 +32,7 @@
       # };
     in
     {
-      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.tomkoid = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; inherit mainUser; inherit flakeDir; };
         modules = [
           # ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
