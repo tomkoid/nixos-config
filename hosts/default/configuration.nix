@@ -128,6 +128,11 @@
     enableSSHSupport = true;
   };
 
+  # Disable USB wakeup from suspend
+  systemd.tmpfiles.rules = [
+    "w    /proc/acpi/wakeup     -    -    -    -   XHCI"
+  ];
+
   # Optimization settings and garbage collection automation
   nix = {
     settings = {
