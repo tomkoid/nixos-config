@@ -41,6 +41,7 @@
     wofi
     fuzzel
     waybar
+    swaynotificationcenter
     batsignal 
     helix
     gimp
