@@ -3,12 +3,14 @@
 {
   programs.tmux = {
     enable = true;
-    shell = "${pkgs.fish}/bin/fish";
+    shell = "${pkgs.zsh}/bin/zsh";
     terminal = "xterm-256color";
-    historyLimit = 100000;
+    historyLimit = 10000;
     mouse = true;
     baseIndex = 1;
     disableConfirmationPrompt = true;
+    escapeTime = 0;
+    clock24 = true;
     keyMode = "vi";
     plugins = with pkgs; [
       {
@@ -23,9 +25,14 @@
       {
         plugin = tmuxPlugins.yank;
       }
+      {
+        plugin = tmuxPlugins.vim-tmux-navigator;
+      }
     ];
 
     extraConfig = ''
+      set -g status-interval 1 
+
       set-option -g renumber-windows on
       bind-key -T copy-mode-vi v send-keys -X begin-selection
       bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle 
