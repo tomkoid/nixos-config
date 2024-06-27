@@ -35,6 +35,7 @@
     gnumake
     nodejs bun
     go
+    zig zls
     elixir erlang gleam
     rustup
     python3Full
