@@ -4,7 +4,7 @@
   programs.tmux = {
     enable = true;
     shell = "${pkgs.zsh}/bin/zsh";
-    terminal = "xterm-256color";
+    terminal = "tmux-256color";
     historyLimit = 10000;
     mouse = true;
     baseIndex = 1;
@@ -31,6 +31,9 @@
     ];
 
     extraConfig = ''
+      # tell Tmux that outside terminal supports true color
+      set -ga terminal-overrides ",xterm-256color*:Tc"
+
       set -g status-interval 1 
 
       set-option -g renumber-windows on
