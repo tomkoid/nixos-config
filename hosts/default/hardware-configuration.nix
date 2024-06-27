@@ -11,6 +11,7 @@
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" "v4l2loopback" ];
+  boot.kernelParams = [ "intel_pstate=active" ];
   boot.extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
 
   fileSystems."/" =
@@ -61,7 +62,7 @@
   # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
 
-  services.power-profiles-daemon.enable = false;
+  services.power-profiles-daemon.enable = true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
