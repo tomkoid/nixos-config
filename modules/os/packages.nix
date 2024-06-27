@@ -34,6 +34,7 @@
     gnumake
     nodejs bun
     go
+    gleam
     rustup
     python3Full
     python311Packages.setuptools
