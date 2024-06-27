@@ -32,7 +32,7 @@
     playerctl
     hping
     gnumake
-    nodejs
+    nodejs bun
     go
     rustup
     python3Full
