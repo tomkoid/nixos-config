@@ -9,10 +9,8 @@
     gtk = {
       enable = true;
       theme = {
-        name = "Colloid-Dark-Catppuccin";
-        package = pkgs.colloid-gtk-theme.override {
-          tweaks = [ "catppuccin" ];
-        };
+        name = "adw-gtk3-dark";
+        package = pkgs.adw-gtk3;
       };
       cursorTheme = {
         package = pkgs.gnome.adwaita-icon-theme;

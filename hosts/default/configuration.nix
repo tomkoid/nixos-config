@@ -91,7 +91,7 @@
     isNormalUser = true;
     initialPassword = "nixos"; # nixos
     description = mainUser;
-    extraGroups = [ "wheel" "disk" "docker" "audio" "video" "input" "systemd-journal" "networkmanager" "network" "davfs2" "networkmanager" "libvirtd" ];
+    extraGroups = [ "wheel" "disk" "docker" "audio" "video" "input" "dialout" "systemd-journal" "networkmanager" "network" "davfs2" "networkmanager" "libvirtd" ];
     packages = with pkgs; [
       firefox
     ];

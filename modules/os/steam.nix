@@ -19,7 +19,7 @@
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
-      gamescopeSession.enable = lib.mkIf config.myConfig.gaming.tools.enable true;
+      # gamescopeSession.enable = lib.mkIf config.myConfig.gaming.tools.enable true;
     };
 
     environment.systemPackages = lib.mkIf config.myConfig.gaming.tools.enable [
