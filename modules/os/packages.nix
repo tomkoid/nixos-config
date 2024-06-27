@@ -31,10 +31,10 @@
     mpv
     playerctl
     hping
+    zellij
     gnumake
     nodejs bun
     go
-    gleam
     elixir erlang gleam
     rustup
     python3Full
