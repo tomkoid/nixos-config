@@ -8,7 +8,7 @@
     kitty
     wezterm
     zsh
-    htop
+    htop bottom
     libnotify
     polkit_gnome
     gnome.gnome-keyring
