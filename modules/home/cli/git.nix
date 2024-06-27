@@ -3,6 +3,7 @@
 {
   options = {
     myConfig.git.enable = lib.mkEnableOption "enable git";
+    myConfig.git.cliff.enable = lib.mkEnableOption "enables git cliff";
   };
 
   config = lib.mkIf config.myConfig.git.enable {
@@ -23,10 +24,6 @@
         crendetial.helper = "store";
       };
     };
-    
-    # home.packages = [
-    #   pkgs.git-lfs
-    # ];
 
     # lazygit config
     programs.lazygit = {
@@ -44,6 +41,10 @@
           };
         };
       };
+    };
+    
+    programs.git-cliff = lib.mkIf config.myConfig.git.cliff.enable {
+      enable = true;
     };
   };
 }
