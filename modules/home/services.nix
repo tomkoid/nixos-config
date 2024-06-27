@@ -41,4 +41,8 @@
       };
     };
   };
+
+  services.batsignal = {
+    enable = true;
+  };
 }

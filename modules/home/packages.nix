@@ -41,6 +41,7 @@
     wofi
     fuzzel
     waybar
+    batsignal 
     helix
     gimp
     kdenlive
