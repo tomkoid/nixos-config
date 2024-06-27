@@ -36,7 +36,10 @@
 
   myConfig = {
     gtk-qt.enable = true;
-    git.enable = true;
+    git = {
+      enable = true;
+      cliff.enable = true; # changelog creator
+    };
     dconf.enable = true;
     starship.enable = true;
     librewolf.enable = true;
