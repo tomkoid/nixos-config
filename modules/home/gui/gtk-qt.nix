@@ -8,9 +8,14 @@
   config = lib.mkIf config.myConfig.gtk-qt.enable {
     gtk = {
       enable = true;
+      gtk4.extraConfig = {
+        gtk-application-prefer-dark-theme = "1";
+      };
       theme = {
-        name = "adw-gtk3-dark";
-        package = pkgs.adw-gtk3;
+        name = "Colloid-Dark-Catppuccin";
+        package = pkgs.colloid-gtk-theme.override {
+          tweaks = [ "catppuccin" ];
+        };
       };
       cursorTheme = {
         package = pkgs.gnome.adwaita-icon-theme;
