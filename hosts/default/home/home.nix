@@ -72,10 +72,11 @@
   };
 
   home.pointerCursor = {
+    gtk.enable = true;
     x11.enable = true;
-    package = pkgs.gnome.adwaita-icon-theme;
-    name = "Adwaita";
-    size = 38;
+    name = "Bibata-Modern-Classic";
+    package = pkgs.bibata-cursors;
+    size = 24;
   };
 
   xdg.mimeApps.defaultApplications = {
