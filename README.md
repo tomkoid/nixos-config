@@ -17,7 +17,7 @@
 <!-- ABOUT -->
 ## About
 
-Here are my NixOS dotfiles. I'm pretty much a beginner in NixOS so I only have one host right now. In the future I plan to move my homelab config here.
+Here are my NixOS dotfiles. I'm pretty much a beginner with NixOS, so I only have one host configured at the moment. I plan to move my homelab config here in the future.
 
 <!-- GETTING STARTED -->
 ## Getting Started
