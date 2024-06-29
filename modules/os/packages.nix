@@ -63,5 +63,8 @@
     gst_all_1.gst-libav
     # Support the Video Audio (Hardware) Acceleration API
     gst_all_1.gst-vaapi
+
+    # LINUX
+    linuxKernel.packages.linux_zen.cpupower
   ];
 }
