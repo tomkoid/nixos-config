@@ -1,4 +1,4 @@
-{ pkgs, mainUser, inputs, ... }:
+{ pkgs, lib, config, mainUser, inputs, ... }:
 
 {
   imports = [
@@ -79,14 +79,17 @@
     size = 24;
   };
 
-  xdg.mimeApps.defaultApplications = {
-    "text/plain" = [ "org.gnome.TextEditor.desktop" ];
-    "text/html" = "librewolf.desktop";
-    "x-scheme-handler/http" = "librewolf.desktop";
-    "x-scheme-handler/https" = "librewolf.desktop";
-    "x-scheme-handler/about" = "librewolf.desktop";
-    "x-scheme-handler/unknown" = "librewolf.desktop";
-    "application/pdf" = [ "librewolf.desktop" ];
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/plain" = [ "org.gnome.TextEditor.desktop" ];
+      "text/html" = "librewolf.desktop";
+      "x-scheme-handler/http" = "librewolf.desktop";
+      "x-scheme-handler/https" = "librewolf.desktop";
+      "x-scheme-handler/about" = "librewolf.desktop";
+      "x-scheme-handler/unknown" = "librewolf.desktop";
+      "application/pdf" = [ "librewolf.desktop" ];
+    };
   };
 
   fonts.fontconfig.enable = true;
