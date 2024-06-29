@@ -2,7 +2,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://codeberg.org/tomkoid/nxios-config">
+  <a href="https://codeberg.org/tomkoid/nixos-config">
     <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Nix_snowflake.svg" alt="NixOS logo" width="80" height="80">
   </a>
 
