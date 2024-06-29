@@ -83,12 +83,12 @@
     enable = true;
     defaultApplications = {
       "text/plain" = [ "org.gnome.TextEditor.desktop" ];
-      "text/html" = "librewolf.desktop";
-      "x-scheme-handler/http" = "librewolf.desktop";
-      "x-scheme-handler/https" = "librewolf.desktop";
-      "x-scheme-handler/about" = "librewolf.desktop";
-      "x-scheme-handler/unknown" = "librewolf.desktop";
-      "application/pdf" = [ "librewolf.desktop" ];
+      "text/html" = "chromium-browser.desktop";
+      "x-scheme-handler/http" = "chromium-browser.desktop";
+      "x-scheme-handler/https" = "chromium-browser.desktop";
+      "x-scheme-handler/about" = "chromium-browser.desktop";
+      "x-scheme-handler/unknown" = "chromium-browser.desktop";
+      "application/pdf" = [ "chromium-browser.desktop" ];
     };
   };
 
