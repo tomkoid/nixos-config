@@ -18,6 +18,8 @@
       proggyfonts
       ubuntu_font_family
       jetbrains-mono
+      corefonts
+      vistafonts
       (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     ];
   };
