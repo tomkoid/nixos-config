@@ -70,6 +70,7 @@
     lutris
     minetest
     prismlauncher
+    godot
 
     #proton stuff
     protonup-qt
