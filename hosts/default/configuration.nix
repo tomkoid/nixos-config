@@ -70,14 +70,26 @@
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
   };
 
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager.lightdm.enable = true; # enable lightdm
+    desktopManager.gnome.enable = true; # enable gnome
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
   };
 
+  services.displayManager = {
+    autoLogin = {
+      enable = true;
+      user = "${mainUser}";
+    };
+    defaultSession = "hyprland";
+  };
+
+  # Configure keymap in X11
   services.dbus.enable = true;
 
   programs.dconf.enable = true;

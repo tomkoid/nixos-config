@@ -5,7 +5,6 @@
     ./auto-cpufreq.nix
     ./bluetooth.nix
     ./docker.nix
-    ./displaymanager.nix
     ./firewall.nix
     ./flatpak.nix
     ./fwupd.nix
