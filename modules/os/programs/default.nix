@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./sudo.nix
     ./adb.nix
+    ./sudo.nix
     ./nix-helper.nix
     ./noisetorch.nix
     ./swaylock.nix
