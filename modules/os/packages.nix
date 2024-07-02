@@ -6,6 +6,7 @@
     neovim
     alacritty
     kitty
+    foot
     wezterm
     zsh
     htop bottom
