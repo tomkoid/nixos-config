@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, mainUser, ... }:
 
 #let
 #  tokyo-night = pkgs.libsForQt5.callPackage ../../../packages/sddm-tokyo-night.nix { };
@@ -13,6 +13,14 @@
     #  theme = "tokyo-night-sddm";
     #};
     displayManager.gdm.enable = true;
+  };
+
+  services.displayManager = {
+    autoLogin = {
+      enable = true;
+      user = "${mainUser}";
+    };
+    defaultSession = "hyprland";
   };
 
   environment.systemPackages = [
