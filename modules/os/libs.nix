@@ -21,6 +21,10 @@
     glib
     glibc
     openssl
+    pcre
+    pcre2
+    pcre16
+    pcre-cpp
     xorg.xorgserver
     xorg.libX11
     xorg.libXi
