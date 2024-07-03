@@ -36,6 +36,7 @@
     gnumake
     nodejs bun
     go
+    nim nimble nimlangserver
     zig zls
     elixir erlang gleam
     rustup
