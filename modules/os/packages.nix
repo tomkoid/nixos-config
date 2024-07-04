@@ -43,7 +43,7 @@
     python3Full
     python311Packages.setuptools
     mold
-    gcc clang
+    gcc clang clang-tools
     sqlite
     wineWowPackages.stable
 
