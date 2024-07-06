@@ -13,6 +13,17 @@
       inputs.home-manager.nixosModules.default
     ];
 
+  nixpkgs.overlays = [
+    # Enable wpa_supplicant WEP support
+    (self: super: {
+      wpa_supplicant = super.wpa_supplicant.overrideAttrs (oldAttrs: rec {
+        extraConfig = oldAttrs.extraConfig + ''
+          CONFIG_WEP=y
+        '';
+      });
+    })
+  ];
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
