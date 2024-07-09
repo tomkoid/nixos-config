@@ -12,7 +12,7 @@
     htop bottom
     libnotify
     polkit_gnome
-    gnome.gnome-keyring
+    gnome-keyring
     gparted
     grim
     slurp
@@ -44,12 +44,13 @@
     python311Packages.setuptools
     mold
     gcc clang clang-tools
+    meson ninja
     sqlite
     wineWowPackages.stable
 
     # GNOME
     libadwaita
-    gnome.adwaita-icon-theme
+    adwaita-icon-theme
 
     # VIDEO
     ffmpeg

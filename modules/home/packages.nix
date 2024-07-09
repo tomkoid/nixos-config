@@ -8,11 +8,11 @@
     signal-desktop
     whatsapp-for-linux
     discord
-    (pkgs.callPackage ../../packages/webcord.nix { }) # webcord
+    # (pkgs.callPackage ../../packages/webcord.nix { }) # webcord
     efm-langserver
     lutris
     xautoclick
-    (pkgs.callPackage ../../packages/xclicker.nix { }) # xclicker
+    # (pkgs.callPackage ../../packages/xclicker.nix { }) # xclicker
     (pkgs.callPackage ../../packages/supershush.nix { }) # supershush
     mpd
     mpc-cli
@@ -32,7 +32,7 @@
     dust
     fish
     xfce.thunar
-    gnome.nautilus
+    nautilus
     wl-clipboard
     wlsunset
     wluma
@@ -51,7 +51,7 @@
     libreoffice
     thunderbird
     eartag
-    gnome.gnome-system-monitor
+    gnome-system-monitor
     pavucontrol
     transmission_4-gtk
     distrobox
