@@ -42,7 +42,6 @@
     enable = true;
     enable32Bit = true;
     extraPackages = extraGpuPackages;
-    extraPackages32 = extraGpuPackages;
   };
 
   environment.systemPackages = [
