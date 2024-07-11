@@ -41,6 +41,7 @@
       cliff.enable = true; # changelog creator
     };
     dconf.enable = true;
+    direnv.enable = true;
     starship.enable = true;
     librewolf.enable = true;
   };
