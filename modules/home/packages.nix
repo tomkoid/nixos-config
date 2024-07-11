@@ -53,7 +53,7 @@
     eartag
     gnome-system-monitor
     pavucontrol
-    transmission_4-gtk
+    # transmission_4-gtk
     distrobox
 
     # DEV
