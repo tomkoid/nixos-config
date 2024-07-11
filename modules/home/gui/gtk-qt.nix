@@ -12,10 +12,8 @@
         gtk-application-prefer-dark-theme = "1";
       };
       theme = {
-        name = "Colloid-Dark-Catppuccin";
-        package = pkgs.colloid-gtk-theme.override {
-          tweaks = [ "catppuccin" ];
-        };
+        name = "Orchis-Dark";
+        package = pkgs.orchis-theme;
       };
       cursorTheme = {
         package = pkgs.adwaita-icon-theme;
