@@ -37,6 +37,8 @@
       # };
     in
     {
+      formatter.${system} = nixpkgs.legacyPackages.${system}.nixpkgs-fmt;
+
       nixosConfigurations.tomkoid = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; inherit mainUser; inherit flakeDir; inherit system; };
         modules = [
