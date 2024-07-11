@@ -10,9 +10,10 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "kvm-intel" "v4l2loopback" ];
   boot.kernelParams = [ "intel_pstate=active" ];
-  boot.extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
+  boot.extraModulePackages = [ pkgs.linuxPackages_latest.v4l2loopback ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/e2aa3c7e-45f0-40fe-ab72-f00fa8f9b77d";
@@ -27,16 +28,21 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-    extraPackages = with pkgs; [
+  hardware.graphics =
+  let
+    extraGpuPackages = with pkgs; [
       mesa.drivers
       intel-media-driver # LIBVA_DRIVER_NAME=iHD
       intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
       vaapiVdpau
       libvdpau-va-gl
     ];
+  in
+  {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = extraGpuPackages;
+    extraPackages32 = extraGpuPackages;
   };
 
   environment.systemPackages = [
