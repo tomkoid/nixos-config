@@ -9,7 +9,8 @@
     foot
     wezterm
     zsh
-    htop bottom
+    htop
+    bottom
     libnotify
     polkit_gnome
     gnome-keyring
@@ -34,17 +35,26 @@
     hping
     zellij
     gnumake
-    nodejs bun
+    nodejs
+    bun
     go
-    nim nimble nimlangserver
-    zig zls
-    elixir erlang gleam
+    nim
+    nimble
+    nimlangserver
+    zig
+    zls
+    elixir
+    erlang
+    gleam
     rustup
     python3Full
     python311Packages.setuptools
     mold
-    gcc clang clang-tools
-    meson ninja
+    gcc
+    clang
+    clang-tools
+    meson
+    ninja
     sqlite
     wineWowPackages.stable
 

@@ -42,7 +42,7 @@
         };
       };
     };
-    
+
     programs.git-cliff = lib.mkIf config.myConfig.git.cliff.enable {
       enable = true;
     };

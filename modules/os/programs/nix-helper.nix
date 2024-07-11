@@ -5,12 +5,12 @@ let
 in
 {
   options = {
-    myConfig.nh.enable = lib.mkEnableOption "enables nix helper"; 
+    myConfig.nh.enable = lib.mkEnableOption "enables nix helper";
   };
 
   config = lib.mkIf config.myConfig.nh.enable {
     environment.sessionVariables = {
-      FLAKE = flakePath; 
+      FLAKE = flakePath;
     };
 
     programs.nh = {

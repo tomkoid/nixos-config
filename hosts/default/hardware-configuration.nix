@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
@@ -16,33 +17,35 @@
   boot.extraModulePackages = [ pkgs.linuxPackages_latest.v4l2loopback ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/e2aa3c7e-45f0-40fe-ab72-f00fa8f9b77d";
+    {
+      device = "/dev/disk/by-uuid/e2aa3c7e-45f0-40fe-ab72-f00fa8f9b77d";
       fsType = "ext4";
     };
 
   boot.initrd.luks.devices."luks-68d7bcb0-3b46-43ce-9080-06180317daea".device = "/dev/disk/by-uuid/68d7bcb0-3b46-43ce-9080-06180317daea";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/04C4-6CB0";
+    {
+      device = "/dev/disk/by-uuid/04C4-6CB0";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   hardware.graphics =
-  let
-    extraGpuPackages = with pkgs; [
-      mesa.drivers
-      intel-media-driver # LIBVA_DRIVER_NAME=iHD
-      intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-      vaapiVdpau
-      libvdpau-va-gl
-    ];
-  in
-  {
-    enable = true;
-    enable32Bit = true;
-    extraPackages = extraGpuPackages;
-  };
+    let
+      extraGpuPackages = with pkgs; [
+        mesa.drivers
+        intel-media-driver # LIBVA_DRIVER_NAME=iHD
+        intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+        vaapiVdpau
+        libvdpau-va-gl
+      ];
+    in
+    {
+      enable = true;
+      enable32Bit = true;
+      extraPackages = extraGpuPackages;
+    };
 
   environment.systemPackages = [
     pkgs.intel-gpu-tools

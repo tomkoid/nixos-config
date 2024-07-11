@@ -42,7 +42,7 @@
     fuzzel
     waybar
     swaynotificationcenter
-    batsignal 
+    batsignal
     helix
     gimp
     kdenlive
@@ -58,7 +58,9 @@
 
     # DEV
     android-studio
-    espup espflash esptool
+    espup
+    espflash
+    esptool
 
     # BROWSERS
     librewolf
