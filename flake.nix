@@ -42,7 +42,18 @@
         modules = [
           # ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
           ./hosts/default/configuration.nix
-          inputs.home-manager.nixosModules.default
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "backup";
+              extraSpecialArgs = { inherit inputs; inherit mainUser; };
+              users.${mainUser}.imports = [
+                ./hosts/default/home.nix
+              ];
+            };
+          }
           inputs.lix-module.nixosModules.default
         ];
       };

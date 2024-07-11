@@ -24,20 +24,6 @@
     })
   ];
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    backupFileExtension = "backup";
-    extraSpecialArgs = { inherit inputs; inherit pkgs; inherit mainUser; inherit flakeDir; };
-    users = {
-      ${mainUser} = {
-        imports = [
-          ./home/home.nix
-        ];
-      };
-    };
-  };
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.timeout = 2;
