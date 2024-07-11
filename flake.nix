@@ -2,7 +2,7 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -33,7 +33,7 @@
     in
     {
       nixosConfigurations.tomkoid = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; inherit mainUser; inherit flakeDir; };
+        specialArgs = { inherit inputs; inherit mainUser; inherit flakeDir; inherit system; };
         modules = [
           # ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
           ./hosts/default/configuration.nix
