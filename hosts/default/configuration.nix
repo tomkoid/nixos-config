@@ -158,6 +158,7 @@
 
   # Optimization settings and garbage collection automation
   nix = {
+    package = pkgs.lix;
     settings = {
       auto-optimise-store = true;
       experimental-features = [ "nix-command" "flakes" ];
