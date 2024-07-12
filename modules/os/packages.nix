@@ -49,10 +49,13 @@
     rustup
     python3Full
     python311Packages.setuptools
+    # flutter
+    # jdk17
     mold
     gcc
     clang
     clang-tools
+    cmake
     meson
     ninja
     sqlite
