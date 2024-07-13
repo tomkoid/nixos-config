@@ -98,7 +98,8 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${mainUser} = {
     isNormalUser = true;
-    initialPassword = "nixos"; # nixos
+    # initialPassword = "nixos"; # nixos
+    hashedPassword = "$y$j9T$JtUlMUjsVnB0hLAqUCcVq.$Ya.FHciQCHktj4m2J2KykiVhOImJLbjY4t1Z4wkudVC";
     description = mainUser;
     extraGroups = [ "wheel" "disk" "docker" "audio" "video" "input" "dialout" "systemd-journal" "networkmanager" "network" "davfs2" "networkmanager" "libvirtd" ];
     packages = with pkgs; [
