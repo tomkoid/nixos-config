@@ -42,6 +42,7 @@
     };
     dconf.enable = true;
     direnv.enable = true;
+    atuin.enable = true;
     starship.enable = true;
     librewolf.enable = true;
   };

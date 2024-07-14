@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./atuin.nix
     ./direnv.nix
     ./git.nix
     ./neofetch.nix
