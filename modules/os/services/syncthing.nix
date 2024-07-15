@@ -1,8 +1,8 @@
-{ config, lib, mainUser, pkgs, ... }:
+{ config, lib, mainUser, ... }:
 
 {
   options = {
-    myConfig.syncthing.enable = lib.mkOption "enable syncthing";
+    myConfig.syncthing.enable = lib.mkEnableOption "enable syncthing";
   };
 
   config = lib.mkIf config.myConfig.syncthing.enable {
