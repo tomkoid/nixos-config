@@ -44,11 +44,11 @@
     {
       formatter.${system} = nixpkgs.legacyPackages.${system}.nixpkgs-fmt;
 
-      nixosConfigurations.tomkoid = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.netherite = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; inherit mainUser; inherit flakeDir; inherit system; };
         modules = [
           # ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
-          ./hosts/default/configuration.nix
+          ./hosts/netherite/configuration.nix
           inputs.home-manager.nixosModules.home-manager
           {
             home-manager = {
@@ -57,7 +57,7 @@
               backupFileExtension = "backup";
               extraSpecialArgs = { inherit inputs; inherit mainUser; };
               users.${mainUser}.imports = [
-                ./hosts/default/home.nix
+                ./hosts/netherite/home.nix
               ];
             };
           }
