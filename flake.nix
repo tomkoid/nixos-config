@@ -13,6 +13,11 @@
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.90.0.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    auto-cpufreq = {
+      url = "github:AdnanHodzic/auto-cpufreq";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, home-manager, nixpkgs, ... }@inputs:
@@ -57,6 +62,7 @@
             };
           }
           inputs.lix-module.nixosModules.default
+          inputs.auto-cpufreq.nixosModules.default
         ];
       };
     };

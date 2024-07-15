@@ -1,7 +1,7 @@
-{ inputs, system, ... }:
+{ ... }:
 
 {
-  services.auto-cpufreq = {
+  programs.auto-cpufreq = {
     enable = true;
     settings = {
       battery = {
