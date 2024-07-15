@@ -119,9 +119,15 @@
   # $ nix search wget
 
   myConfig = {
+    sound.enable = true;
+    bluetooth.enable = true;
     gaming.enable = true;
     polkit.enable = true;
+    docker.enable = true;
+    podman.enable = true;
+    syncthing.enable = true;
     nh.enable = true;
+    auto-cpufreq.enable = true;
 
     printing = {
       enable = true;
