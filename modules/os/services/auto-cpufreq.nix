@@ -6,7 +6,7 @@
   };
 
   config = lib.mkIf config.myConfig.auto-cpufreq.enable {
-    programs.auto-cpufreq = {
+    services.auto-cpufreq = {
       enable = true;
       settings = {
         battery = {
