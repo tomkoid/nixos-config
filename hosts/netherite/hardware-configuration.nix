@@ -3,6 +3,9 @@
 # to /etc/nixos/configuration.nix instead.
 { config, lib, pkgs, modulesPath, ... }:
 
+let
+  linuxKernel = pkgs.linuxPackages_latest;
+in
 {
   imports =
     [
@@ -11,10 +14,10 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = linuxKernel;
   boot.kernelModules = [ "kvm-intel" "v4l2loopback" ];
   boot.kernelParams = [ "intel_pstate=active" ];
-  boot.extraModulePackages = [ pkgs.linuxPackages_latest.v4l2loopback ];
+  boot.extraModulePackages = [ linuxKernel.v4l2loopback ];
 
   fileSystems."/" =
     {
