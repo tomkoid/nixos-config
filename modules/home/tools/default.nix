@@ -3,5 +3,6 @@
 {
   imports = [
     ./dconf.nix
+    ./mangohud.nix
   ];
 }

@@ -9,6 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    catppuccin = {
+      url = "github:catppuccin/nix";
+    };
+
     lix-module = {
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.90.0.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -50,6 +54,7 @@
           # ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
           ./hosts/netherite/configuration.nix
           inputs.home-manager.nixosModules.home-manager
+          inputs.catppuccin.nixosModules.catppuccin
           {
             home-manager = {
               useGlobalPkgs = true;
@@ -58,6 +63,7 @@
               extraSpecialArgs = { inherit inputs; inherit mainUser; };
               users.${mainUser}.imports = [
                 ./hosts/netherite/home.nix
+                inputs.catppuccin.homeManagerModules.catppuccin
               ];
             };
           }
