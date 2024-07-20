@@ -32,6 +32,7 @@
     vlc
     mpv
     playerctl
+    networkmanagerapplet
     hping
     zellij
     gnumake
