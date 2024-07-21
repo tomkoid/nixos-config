@@ -43,7 +43,6 @@
     dconf.enable = true;
     direnv.enable = true;
     mangohud.enable = true;
-    atuin.enable = true;
     starship.enable = true;
     librewolf.enable = true;
   };
