@@ -4,7 +4,7 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 let
-  linuxKernel = pkgs.linuxPackages_latest;
+  linuxKernel = pkgs.linuxPackages;
 in
 {
   imports =
