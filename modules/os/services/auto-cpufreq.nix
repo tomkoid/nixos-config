@@ -7,10 +7,10 @@
 
   config = lib.mkIf config.myConfig.auto-cpufreq.enable {
     services.auto-cpufreq = {
-      enable = true;
+      enable = false;
       settings = {
         battery = {
-          governor = "powersave";
+          governor = "performance";
           turbo = "auto";
         };
         charger = {
