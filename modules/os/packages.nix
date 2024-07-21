@@ -29,6 +29,7 @@
     unzip
     unrar
     brightnessctl
+    killall
     vlc
     mpv
     playerctl
