@@ -5,7 +5,7 @@
     myConfig.atuin.enable = lib.mkEnableOption "enable atuin";
   };
 
-  config = lib.mkIf config.myConfig.direnv.enable {
+  config = lib.mkIf config.myConfig.atuin.enable {
     programs.atuin.enable = true;
   };
 }
