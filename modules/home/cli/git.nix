@@ -22,7 +22,9 @@
       };
       extraConfig = {
         crendetial.helper = "store";
+        init.defaultBranch = "main";
       };
+      ignores = [".DS_Store" ".direnv" ".envrc"];
     };
 
     # lazygit config
