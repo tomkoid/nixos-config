@@ -200,6 +200,8 @@ in
     ffmpeg-full
     direnv
     uwsm
+    github-copilot-cli
+    copilot-language-server
     gcc
     cargo
     rustc
