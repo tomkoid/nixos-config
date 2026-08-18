@@ -2,12 +2,7 @@
   lib,
   stdenv,
   fetchurl,
-  dpkg,
-  autoPatchelfHook,
-  xorg,
-  freetype,
-  alsa-lib,
-  libglvnd,
+  pkgs,
 }:
 
 stdenv.mkDerivation rec {
@@ -23,17 +18,17 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-21BIJm8ZdGyHOxR65PAIjUkHUHSbq/3xS89ArbUc4zM=";
   };
 
-  nativeBuildInputs = [
+  nativeBuildInputs = with pkgs; [
     dpkg
     autoPatchelfHook
   ];
 
-  buildInputs = [
-    xorg.libX11
-    xorg.libXext
-    xorg.libXcursor
-    xorg.libXinerama
-    xorg.libXrandr
+  buildInputs = with pkgs; [
+    libX11
+    libXext
+    libXcursor
+    libXinerama
+    libXrandr
     freetype
     alsa-lib
     libglvnd
