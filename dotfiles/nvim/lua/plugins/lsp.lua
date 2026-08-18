@@ -299,7 +299,8 @@ return {
 								expr = '(builtins.getFlake "/home/tom/nix").nixosConfigurations.broski.options',
 							},
 							home_manager = {
-								expr = '(builtins.getFlake "/home/tom/nix").homeConfigurations.broski.options',
+								expr =
+								'(builtins.getFlake "/home/tom/nix").nixosConfigurations.broski.options.home-manager.users.type.getSubOptions []',
 							},
 						},
 					},
