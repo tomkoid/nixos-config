@@ -195,6 +195,7 @@ in
     acpi
     stylua
     vulkan-tools
+    bottom
     networkmanagerapplet
     glib
     ffmpeg-full
