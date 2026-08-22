@@ -1,21 +1,24 @@
-{ pkgs, ... }:
-
 {
-  programs.cargo = {
-    enable = true;
-    settings = {
-      build.rustc-wrapper = "sccache";
+  config.home.modules.development =
+    { pkgs, ... }:
 
-      target = {
-        "x86_64-unknown-linux-gnu" = {
-          linker = "clang";
-          rustflags = [ "-Clink-arg=--ld-path=${pkgs.wild}/bin/wild" ];
-        };
+    {
+      programs.cargo = {
+        enable = true;
+        settings = {
+          build.rustc-wrapper = "sccache";
 
-        "aarch64-unknown-linux-gnu" = {
-          linker = "${pkgs.pkgsCross.aarch64-multiplatform.buildPackages.gcc}/bin/gcc";
+          target = {
+            "x86_64-unknown-linux-gnu" = {
+              linker = "clang";
+              rustflags = [ "-Clink-arg=--ld-path=${pkgs.wild}/bin/wild" ];
+            };
+
+            "aarch64-unknown-linux-gnu" = {
+              linker = "${pkgs.pkgsCross.aarch64-multiplatform.buildPackages.gcc}/bin/gcc";
+            };
+          };
         };
       };
     };
-  };
 }

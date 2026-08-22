@@ -7,6 +7,7 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flake-parts.url = "github:hercules-ci/flake-parts";
 
     hyprland.url = "github:hyprwm/Hyprland";
     zen-browser = {
@@ -28,36 +29,73 @@
   };
 
   outputs =
-    { self, nixpkgs, ... }@inputs:
+    inputs@{ nixpkgs, flake-parts, ... }:
     let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
-        };
-      };
+      inherit (nixpkgs) lib;
+
+      collectNix =
+        dir:
+        let
+          entries = builtins.readDir dir;
+        in
+        lib.concatMap (
+          name:
+          let
+            path = dir + "/${name}";
+            type = entries.${name};
+          in
+          if type == "directory" then
+            collectNix path
+          else if type == "regular" && lib.hasSuffix ".nix" name then
+            [ path ]
+          else
+            [ ]
+        ) (builtins.attrNames entries);
+
+      collectHostConfigurations =
+        dir:
+        let
+          entries = builtins.readDir dir;
+        in
+        lib.concatMap (
+          name:
+          let
+            path = dir + "/${name}";
+            type = entries.${name};
+            configuration = path + "/configuration.nix";
+          in
+          if type == "directory" then
+            (lib.optional (builtins.pathExists configuration) configuration) ++ collectHostConfigurations path
+          else
+            [ ]
+        ) (builtins.attrNames entries);
+
     in
-    {
-      nixosConfigurations.broski = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/broski/configuration.nix
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [
+        (
+          { lib, ... }:
+
           {
-            nixpkgs.pkgs = pkgs;
-          }
-          inputs.musnix.nixosModules.musnix
-          inputs.home-manager.nixosModules.default
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              extraSpecialArgs = { inherit inputs; };
-              users.tom = ./hosts/broski/home.nix;
+            options = {
+              nixos.modules = lib.mkOption {
+                type = lib.types.attrsOf lib.types.deferredModule;
+                default = { };
+                description = "Reusable NixOS modules.";
+              };
+
+              home.modules = lib.mkOption {
+                type = lib.types.attrsOf lib.types.deferredModule;
+                default = { };
+                description = "Reusable Home Manager modules.";
+              };
             };
+
+            config.systems = [ ];
           }
-        ];
-      };
+        )
+      ]
+      ++ collectNix ./modules
+      ++ collectHostConfigurations ./hosts;
     };
 }
