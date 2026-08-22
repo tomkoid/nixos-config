@@ -1,20 +1,20 @@
-{ ... }:
-
 {
-  security.sudo = {
-    enable = true;
-    extraRules = [
-      {
-        users = [ "tom" ];
-        commands = [
-          {
-            command = "ALL";
-            options = [ "NOPASSWD" ];
-          }
-        ];
-      }
-    ];
-  };
+  config.nixos.modules.security = {
+    security.sudo = {
+      enable = true;
+      extraRules = [
+        {
+          users = [ "tom" ];
+          commands = [
+            {
+              command = "ALL";
+              options = [ "NOPASSWD" ];
+            }
+          ];
+        }
+      ];
+    };
 
-  services.fprintd.enable = true;
+    services.fprintd.enable = true;
+  };
 }
