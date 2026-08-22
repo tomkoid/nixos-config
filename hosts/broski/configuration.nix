@@ -303,7 +303,7 @@ in
         ids = [ "0001:0001:6fb3735a" ];
         settings = {
           main = {
-            capslock = "overload(control, esc)";
+            capslock = "esc";
             esc = "capslock";
           };
         };
