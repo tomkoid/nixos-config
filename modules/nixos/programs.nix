@@ -4,6 +4,7 @@
 
     {
       programs.fish.enable = true;
+      programs.thunderbird.enable = true;
 
       programs.gnupg.agent = {
         enable = true;

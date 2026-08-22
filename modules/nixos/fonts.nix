@@ -10,6 +10,7 @@
         adwaita-fonts
         liberation_ttf
         fira-code
+        google-fonts
         fira-code-symbols
         mplus-outline-fonts.githubRelease
         dina-font
