@@ -195,6 +195,7 @@ in
     direnv
     uwsm
     github-copilot-cli
+    delta
     copilot-language-server
     gcc
     cargo
