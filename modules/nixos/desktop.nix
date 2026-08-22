@@ -1,7 +1,7 @@
 { inputs, ... }:
 
 {
-  config.nixos.modules.desktop =
+  config.flake.nixosModules.desktop =
     { pkgs, ... }:
 
     let

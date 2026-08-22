@@ -1,5 +1,5 @@
 {
-  config.nixos.modules.programs =
+  config.flake.nixosModules.programs =
     { pkgs, ... }:
 
     {

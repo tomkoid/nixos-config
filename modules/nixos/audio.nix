@@ -1,7 +1,7 @@
 { inputs, ... }:
 
 {
-  config.nixos.modules.audio =
+  config.flake.nixosModules.audio =
     { lib, pkgs, ... }:
 
     let

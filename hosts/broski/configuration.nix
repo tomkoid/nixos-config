@@ -12,21 +12,18 @@ in
     inherit system;
     modules = [
       ./hardware-configuration.nix
-      config.nixos.modules.audio
-      config.nixos.modules.desktop
-      config.nixos.modules.firewall
-      config.nixos.modules.fonts
-      config.nixos.modules.gaming
-      config.nixos.modules.nix
-      config.nixos.modules.packages
-      config.nixos.modules.programs
-      config.nixos.modules.security
-      config.nixos.modules.services
-      config.nixos.modules.users
+      config.flake.nixosModules.audio
+      config.flake.nixosModules.desktop
+      config.flake.nixosModules.firewall
+      config.flake.nixosModules.fonts
+      config.flake.nixosModules.gaming
+      config.flake.nixosModules.nix
+      config.flake.nixosModules.packages
+      config.flake.nixosModules.programs
+      config.flake.nixosModules.security
+      config.flake.nixosModules.services
+      config.flake.nixosModules.users
       inputs.home-manager.nixosModules.default
-      {
-        nixpkgs.pkgs = pkgs;
-      }
       {
         networking.hostName = "broski";
         networking.networkmanager.enable = true;
@@ -34,16 +31,17 @@ in
         time.timeZone = "Europe/Prague";
 
         system.stateVersion = "26.05";
+        nixpkgs.pkgs = pkgs;
 
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
           users.tom = {
             imports = [
-              config.home.modules.development
-              config.home.modules.dotfiles
-              config.home.modules.services
-              config.home.modules.theme
+              config.flake.homeModules.development
+              config.flake.homeModules.dotfiles
+              config.flake.homeModules.services
+              config.flake.homeModules.theme
             ];
 
             home.username = "tom";

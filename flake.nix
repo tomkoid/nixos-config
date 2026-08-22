@@ -29,73 +29,37 @@
   };
 
   outputs =
-    inputs@{ nixpkgs, flake-parts, ... }:
+    inputs:
     let
-      inherit (nixpkgs) lib;
+      inherit (inputs.nixpkgs) lib;
+      inherit (lib.fileset) toList fileFilter;
 
-      collectNix =
-        dir:
-        let
-          entries = builtins.readDir dir;
-        in
-        lib.concatMap (
-          name:
-          let
-            path = dir + "/${name}";
-            type = entries.${name};
-          in
-          if type == "directory" then
-            collectNix path
-          else if type == "regular" && lib.hasSuffix ".nix" name then
-            [ path ]
-          else
-            [ ]
-        ) (builtins.attrNames entries);
+      isNixModule =
+        file:
+        file.hasExt "nix"
+        && file.name != "flake.nix"
+        && file.name != "hardware-configuration.nix"
+        && !lib.hasPrefix "_" file.name;
 
-      collectHostConfigurations =
-        dir:
-        let
-          entries = builtins.readDir dir;
-        in
-        lib.concatMap (
-          name:
-          let
-            path = dir + "/${name}";
-            type = entries.${name};
-            configuration = path + "/configuration.nix";
-          in
-          if type == "directory" then
-            (lib.optional (builtins.pathExists configuration) configuration) ++ collectHostConfigurations path
-          else
-            [ ]
-        ) (builtins.attrNames entries);
+      importTree = path: toList (fileFilter isNixModule path);
 
+      mkFlake = inputs.flake-parts.lib.mkFlake { inherit inputs; };
     in
-    flake-parts.lib.mkFlake { inherit inputs; } {
+    mkFlake {
+      systems = [ ];
       imports = [
         (
           { lib, ... }:
 
           {
-            options = {
-              nixos.modules = lib.mkOption {
-                type = lib.types.attrsOf lib.types.deferredModule;
-                default = { };
-                description = "Reusable NixOS modules.";
-              };
-
-              home.modules = lib.mkOption {
-                type = lib.types.attrsOf lib.types.deferredModule;
-                default = { };
-                description = "Reusable Home Manager modules.";
-              };
+            options.flake.homeModules = lib.mkOption {
+              type = lib.types.attrsOf lib.types.deferredModule;
+              default = { };
             };
-
-            config.systems = [ ];
           }
         )
       ]
-      ++ collectNix ./modules
-      ++ collectHostConfigurations ./hosts;
+      ++ importTree ./modules
+      ++ importTree ./hosts;
     };
 }

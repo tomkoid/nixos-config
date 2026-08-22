@@ -1,5 +1,5 @@
 {
-  config.home.modules.development =
+  config.flake.homeModules.development =
     { pkgs, ... }:
 
     {

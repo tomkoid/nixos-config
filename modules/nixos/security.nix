@@ -1,5 +1,5 @@
 {
-  config.nixos.modules.security = {
+  config.flake.nixosModules.security = {
     security.sudo = {
       enable = true;
       extraRules = [
