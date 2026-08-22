@@ -197,6 +197,7 @@ in
     github-copilot-cli
     delta
     copilot-language-server
+    codex
     gcc
     cargo
     rustc
