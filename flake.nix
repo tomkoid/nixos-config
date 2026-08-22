@@ -17,6 +17,10 @@
       url = "github:tomkoid/yadal";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    tiddl = {
+      url = "github:tomkoid/tiddl";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     musnix = {
       url = "github:musnix/musnix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -40,7 +44,9 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/broski/configuration.nix
-          { nixpkgs.pkgs = pkgs; }
+          {
+            nixpkgs.pkgs = pkgs;
+          }
           inputs.musnix.nixosModules.musnix
           inputs.home-manager.nixosModules.default
           {

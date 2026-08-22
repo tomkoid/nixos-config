@@ -45,13 +45,6 @@ in
     ./hardware-configuration.nix
   ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   networking.hostName = "broski"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
@@ -249,6 +242,7 @@ in
     polkit_gnome
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.yadal.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.tiddl.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     yabridge
     yabridgectl
@@ -484,9 +478,13 @@ in
         "nix-command"
         "flakes"
       ];
-      substituters = [ "https://hyprland.cachix.org" ];
+      substituters = [
+        "https://hyprland.cachix.org"
+      ];
       trusted-substituters = [ "https://hyprland.cachix.org" ];
-      trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+      trusted-public-keys = [
+        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      ];
       # Required so non-root users are allowed to use the above substituter/keys.
       # Use @wheel for all sudo users, or list your username explicitly.
       trusted-users = [
