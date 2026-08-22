@@ -1,5 +1,5 @@
 {
-  config.nixos.modules.gaming = {
+  config.flake.nixosModules.gaming = {
     programs.steam.enable = true;
   };
 }

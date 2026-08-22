@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  config.home.modules.dotfiles =
+  config.flake.homeModules.dotfiles =
     { config, lib, ... }:
 
     let

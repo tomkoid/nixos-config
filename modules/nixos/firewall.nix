@@ -1,5 +1,5 @@
 {
-  config.nixos.modules.firewall = {
+  config.flake.nixosModules.firewall = {
     networking.firewall = {
       allowedTCPPorts = [
         8384

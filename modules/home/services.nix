@@ -1,5 +1,5 @@
 {
-  config.home.modules.services = {
+  config.flake.homeModules.services = {
     programs.gpg.enable = true;
 
     services = {

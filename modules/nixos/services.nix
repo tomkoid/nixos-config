@@ -1,5 +1,5 @@
 {
-  config.nixos.modules.services = {
+  config.flake.nixosModules.services = {
     services.printing.enable = true;
 
     hardware.bluetooth = {

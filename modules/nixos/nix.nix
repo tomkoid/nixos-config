@@ -1,5 +1,5 @@
 {
-  config.nixos.modules.nix = {
+  config.flake.nixosModules.nix = {
     nix = {
       settings = {
         experimental-features = [

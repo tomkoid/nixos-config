@@ -1,5 +1,5 @@
 {
-  config.home.modules.theme =
+  config.flake.homeModules.theme =
     { pkgs, ... }:
 
     {

@@ -1,5 +1,5 @@
 {
-  config.nixos.modules.fonts =
+  config.flake.nixosModules.fonts =
     { pkgs, ... }:
 
     {

@@ -1,5 +1,5 @@
 {
-  config.nixos.modules.users =
+  config.flake.nixosModules.users =
     { pkgs, ... }:
 
     {
